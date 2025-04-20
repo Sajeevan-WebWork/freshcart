@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.categorietext {
+    &::first-letter {
+        background: #000;
+    }
+}
+
+/* .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+    position: fixed;
+    bottom: -50px;
+    z-index: 99;
+} */
