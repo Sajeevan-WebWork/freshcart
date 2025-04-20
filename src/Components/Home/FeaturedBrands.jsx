@@ -23,10 +23,10 @@ const FeaturedBrands = ({ title }) => {
                     </div>
                 </div>
 
-                <div className="pt-8">
+                <div className="pt-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 items-stretch justify-between">
                     {
                         FEATURESBRANS.map((item, i) => (
-                            <FeaturesBrandsCard title={item.title} poster={item.poster} offer={item.offer} logo={item.logo} theme={item.theme} />
+                            <FeaturesBrandsCard {...item} />
                         ))
                     }
                 </div>

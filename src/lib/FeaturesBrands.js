@@ -12,7 +12,7 @@ const FEATURESBRANS = [
         title: "world's no: 1 rice",
         poster: "/public/FeaturesBrand/india-gate.png",
         logo: "/public/FeaturesBrand/india-gate-logo.png",
-        theme: "#115414"
+        theme: "#102861"
     },
 
     {
@@ -20,7 +20,7 @@ const FEATURESBRANS = [
         title: "green tasteal",
         poster: "/public/FeaturesBrand/tetley-brand.png",
         logo: "/public/FeaturesBrand/tetley-brand-logo.png",
-        theme: "#115414"
+        theme: "#75B032"
     },
 ]
 

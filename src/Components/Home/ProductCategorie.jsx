@@ -12,7 +12,7 @@ import PRODUCTLIST from '../../lib/ProductCartList';
 import ProductCardList from './ProductCardList';
 import { ChevronRight } from 'lucide-react';
 
-const ProductCategorie = ({ title }) => {
+const ProductCategorie = ({ title, categoireType }) => {
     return (
         <div className='flex-col gap-6 py-16 relative'>
             <div className="flex items-center justify-between ">
@@ -25,18 +25,21 @@ const ProductCategorie = ({ title }) => {
 
             <div className="pt-8">
 
-                <Swiper pagination={false} modules={[Pagination]} className="mySwiper " slidesPerView={5} autoplay={true} spaceBetween={30}>
+                <Swiper pagination={false} modules={[Pagination]} className="mySwiper" loop={true} slidesPerView={5} autoplay={true} spaceBetween={30}>
                     {
-                        PRODUCTLIST.filter(item => item.categoire !== "topCategrie").map((item, i) => (
-                            <SwiperSlide key={i}>
-                                <ProductCardList
-                                    poster={item.poster}
-                                    title={item.title}
-                                    price={item.price}
-                                    offprice={item.price * item.offer / 100}
-                                    offer={item.offer} />
-                            </SwiperSlide>
-                        ))
+                        PRODUCTLIST
+                            .filter(item => item.categoire === categoireType) // ✅ use `===` if showing that category
+                            .map((item, i) => (
+                                <SwiperSlide key={i}>
+                                    <ProductCardList
+                                        poster={item.poster}
+                                        title={item.title}
+                                        price={item.price}
+                                        offprice={(item.price - (item.price * item.offer / 100)).toFixed(2)}
+                                        offer={item.offer}
+                                    />
+                                </SwiperSlide>
+                            ))
                     }
                 </Swiper>
             </div>
